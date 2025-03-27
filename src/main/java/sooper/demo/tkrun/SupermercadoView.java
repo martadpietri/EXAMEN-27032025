@@ -12,6 +12,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.table.DefaultTableModel;
 
+
 public class SupermercadoView {
 
 	protected JFrame frmSupermercado;
@@ -92,9 +93,15 @@ public class SupermercadoView {
 		scrollPane_1.setViewportView(tablaEmbolsados);
 		
 		btnEnvioAlmacen = new JButton("Enviar a almacén");
+		btnEnvioAlmacen.addActionListener(new ActionListener() { 
+			public void actionPerformed(ActionEvent e) {
+				new EnviarAlmacenView().frmSupermercado.setVisible(true); // Abre la ventana EnviarAlmacenView
+			}
+		});
 		frmSupermercado.getContentPane().add(btnEnvioAlmacen, "cell 0 5");
 		frmSupermercado.setVisible(true);
 	}
+	
 	
 	public JFrame getFrame() {
 		return this.frmSupermercado;

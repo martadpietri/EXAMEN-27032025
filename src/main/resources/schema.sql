@@ -19,6 +19,7 @@ CREATE TABLE "articuloPedido" (
 	"idArticulo"	INTEGER NOT NULL,
 	"idPedido"	INTEGER NOT NULL,
 	"volumen" integer not null,
+	"embolsado" integer not NULL, /* 5. a) En la tabla articuloPedido se almacene un campo llamado "embolsado" de tipo entero */
 	PRIMARY KEY("idArticulo","idPedido"),
 	FOREIGN KEY("idArticulo") REFERENCES "articulo"("idArticulo")
 );
